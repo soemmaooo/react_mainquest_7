@@ -1,0 +1,16 @@
+@import 'bootstrap/scss/functions';
+
+@import './style/variables';
+
+@import 'bootstrap/scss/bootstrap';
+
+@import './style/base';
+@import './style/home';
+@import './style/products';
+@import './style/carts';
+@import './style/checkout';
+@import './style/login';
+
+@import './style/adm_product';
+
+@import './style/spinner';

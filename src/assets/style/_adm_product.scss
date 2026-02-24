@@ -1,0 +1,182 @@
+html,
+body {
+  height: 100%;
+}
+
+img {
+  object-fit: contain;
+  max-width: 100%;
+}
+
+.primary-image {
+  height: 300px;
+}
+
+.images {
+  height: 150px;
+}
+
+.custom-table {
+  min-width: 900px;
+  --bs-table-bg: transparent;
+}
+.custom-table thead tr,
+.custom-table thead th {
+  border-top: none;
+  border-bottom: none !important;
+  font-weight: 400;
+}
+.custom-table tbody th,
+.custom-table tbody td {
+  color: #5a5a5a;
+  font-weight: 400;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-weight: 300;
+  border: none;
+  text-align: center !important;
+}
+
+.custom-table tbody tr:hover,
+.custom-table tbody tr:focus {
+  background: #ffffff7d;
+}
+.custom-table tbody tr:hover td:first-child {
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+.custom-table tbody tr:hover td:last-child {
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.btn-main {
+  padding: 8px 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+  border: 1px solid #bbbbbb7c;
+  border-radius: 100px;
+  height: 100%;
+}
+
+.btn-main:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-main:active {
+  transform: translateY(0);
+  transition: all 0.1s;
+}
+
+.primary-text {
+  color: rgb(237, 143, 158);
+}
+
+.primary-bg {
+  background-color: rgb(255, 132, 241);
+}
+
+.page-link:hover {
+  transform: scale(1.3);
+}
+
+/* From Uiverse.io by SteveBloX */
+.confirm-modal {
+  box-sizing: border-box;
+  width: 360px;
+  height: 254px;
+  background: rgba(217, 217, 217, 0.58);
+  border: 1px solid white;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  color: #5a5a5a;
+}
+
+.confirm-modal:hover {
+  border: 1px solid rgba(195, 195, 195, 0.728);
+  transform: scale(1.05);
+}
+
+.confirm-modal:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+
+// Modal.scss
+
+.custom-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+}
+
+.custom-modal-content {
+  margin: 20px;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  display: grid;
+  border-radius: 20px;
+  box-shadow: 0px 6px 10px rgba(255, 255, 255, 0.1);
+  background: rgb(227, 227, 227);
+  transition: all 0.2s;
+
+  .custom-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    color: #5a5a5a;
+
+    .close-x {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+
+  .custom-modal-body {
+    padding: 20px 0;
+  }
+
+  .custom-modal-footer {
+    text-align: right;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+  }
+}
+
+.custom-modal-content:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

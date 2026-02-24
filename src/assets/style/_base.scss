@@ -1,0 +1,44 @@
+// 基本設定
+img {
+  max-width: 100%;
+  min-width: 0;
+  object-fit: cover;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  // outline: 1px solid red;
+}
+
+ul {
+  padding-left: 0;
+}
+li {
+  list-style: none;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+.main-nav {
+  background: #a3b9da;
+  padding: 12px;
+  .link {
+    text-decoration: none;
+    color: black;
+    font-size: 28px;
+
+    padding: 16px;
+  }
+}
+
+.main-border {
+  background-color: #fff;
+  box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
+  border: 6px solid #9c8f67;
+  border-radius: 32px;
+  overflow: hidden;
+}
