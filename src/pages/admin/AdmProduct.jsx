@@ -36,21 +36,33 @@ function AdmProduct() {
   const { showError, showSuccess } = useMessage();
 
   useEffect(() => {
-    const token = document.cookie.replace(
-      /(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/,
-      '$1',
-    );
-    axios.defaults.headers.common.Authorization = token;
     checkAdmin();
   }, []);
 
   const checkAdmin = async () => {
+    const token = document.cookie.replace(
+      /(?:(?:^|.*;\s*)emmaToken\s*=\s*([^;]*).*$)|^.*$/,
+      '$1',
+    );
+
+    if (!token) {
+      showError('請先登入');
+      navigator('/login');
+      return;
+    }
+
     setIsLoading(true);
     try {
-      await axios.post(`${VITE_APP_API_BASE}/api/user/check`);
+      await axios.post(
+        `${VITE_APP_API_BASE}/api/user/check`,
+        {},
+        { headers: { Authorization: token } },
+      );
+
+      axios.defaults.headers.common.Authorization = token;
       getProduct();
     } catch (err) {
-      showError(err.response.data.message);
+      showError(err.response?.data?.message);
       navigator('/login');
     } finally {
       setIsLoading(false);

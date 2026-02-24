@@ -32,7 +32,7 @@ export default function Login() {
       setIsLoading(true);
       const res = await axios.post(`${VITE_APP_API_BASE}/admin/signin`, data);
       const { token, expired } = res.data;
-      document.cookie = `emmaToken=${token}; expires=${new Date(expired)};`;
+      document.cookie = `emmaToken=${token}; expires=${new Date(expired)}; path=/`;
       showSuccess(res.data.message);
       setIsAuth(true);
       reset();
